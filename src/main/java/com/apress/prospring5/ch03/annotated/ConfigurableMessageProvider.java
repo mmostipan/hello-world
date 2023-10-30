@@ -1,6 +1,7 @@
 package com.apress.prospring5.ch03.annotated;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.apress.prospring5.ch02.decoupled.MessageProvider;
@@ -11,7 +12,7 @@ public class ConfigurableMessageProvider implements MessageProvider {
     private String message;
 
     @Autowired
-    public ConfigurableMessageProvider(String message) {
+    public ConfigurableMessageProvider(@Value("Hello World!")String message) {
         this.message = message;
     }
 
